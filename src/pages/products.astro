@@ -1,0 +1,343 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<style>
+
+/* Minimal, Swiss-Inspired Layout */
+.products-wrapper {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  color: #111; /* Crisp text color */
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header Section */
+.products-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.products-intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  color: #0055a5; /* Brand color for headings */
+}
+
+.products-intro p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Category Section Layout */
+.category-section {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.category-section h2 {
+  font-size: 1.5rem;
+  color: #0055a5;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.category-section p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+/* Glider Container */
+.glider-contain {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1000px; /* Align slides nicely */
+}
+
+/* Show partial slides for Swiss-like minimal continuity */
+.glider {
+  /* slidesToShow is set inline with JS (2.3 or 2.5) */
+}
+
+/* Nav Arrows & Dots (Simple, understated) */
+.glider-prev,
+.glider-next {
+  background: #0055a5;
+  border: none;
+  color: #fff;
+  width: 36px;   /* or 40px, as you prefer */
+  height: 36px;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  /* Center the arrow using flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;  /* Adjust to match arrow or icon size */
+}
+
+.glider-prev:hover, .glider-next:hover {
+  transform: scale(1.1);
+}
+
+.dots {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dots button {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  border: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dots button.glider-dot.active {
+  background: #0055a5;
+  transform: scale(1.3);
+}
+
+/* Product Card */
+.product-card {
+  width: 220px; /* consistent width */
+  background: #fff;
+  margin: 0 10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s;
+  text-align: center;
+  overflow: hidden; /* Crop overflowing images */
+}
+
+.product-card:hover {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1rem;
+  color: #111;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 1rem 1rem;
+}
+
+/* CTA at bottom */
+.products-cta {
+  text-align: center;
+  margin: 4rem 0 2rem;
+}
+
+.products-cta a {
+  display: inline-block;
+  background-color: #0055a5;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.products-cta a:hover {
+  background-color: #003d78;
+}
+</style>
+
+<!-- Glider.js Setup -->
+<script is:inline>
+  window.addEventListener('load', function() {
+    setTimeout(() => {
+      document.querySelectorAll('.glider').forEach(gliderEl => {
+        new Glider(gliderEl, {
+          slidesToShow: 2.3,  // partial next slide for smooth visual
+          slidesToScroll: 1,
+          draggable: true,
+          rewind: true,
+          dots: gliderEl.parentElement.querySelector('.dots'),
+          arrows: {
+            prev: gliderEl.parentElement.querySelector('.glider-prev'),
+            next: gliderEl.parentElement.querySelector('.glider-next')
+          },
+          duration: 0.5       // quick transitions
+        });
+      });
+    }, 100);
+  });
+</script>
+
+<MainLayout>
+  <div class="products-wrapper">
+
+    <!-- Simple Intro -->
+    <section class="products-intro">
+      <h1>Our Products</h1>
+      <p>Explore our curated selection of premium sanitary solutions, presented in smooth, minimalist galleries.</p>
+    </section>
+
+    <!-- Category 1: Faucets -->
+    <section class="category-section" id="faucets">
+      <h2>Bathroom Faucets</h2>
+      <p>Elevate your bathroom style with sleek, modern taps.</p>
+      <div class="glider-contain">
+        <div class="glider">
+          <div class="product-card">
+            <img src="/images/faucets/faucet1.jpg" alt="Faucet 1" />
+            <h3>Faucet Model 1</h3>
+            <p>Chrome finish, single-handle design.</p>
+          </div>
+          <div class="product-card">
+            <img src="/images/faucets/faucet2.jpg" alt="Faucet 2" />
+            <h3>Faucet Model 2</h3>
+            <p>Polished brass, easy installation.</p>
+          </div>
+          <div class="product-card">
+            <img src="/images/faucets/faucet3.jpg" alt="Faucet 3" />
+            <h3>Faucet Model 3</h3>
+            <p>Matte black, top-rated durability.</p>
+          </div>
+        </div>
+        <button class="glider-prev">«</button>
+        <button class="glider-next">»</button>
+        <div class="dots"></div>
+      </div>
+    </section>
+
+    <!-- Category 2: Sinks -->
+    <section class="category-section" id="sinks">
+      <h2>Kitchen Sinks</h2>
+      <p>Modern, functional designs crafted for lasting quality.</p>
+      <div class="glider-contain">
+        <div class="glider">
+          <div class="product-card">
+            <img src="/images/sinks/sink1.jpg" alt="Sink 1" />
+            <h3>Sink Model 1</h3>
+            <p>Stainless steel, deep basin.</p>
+          </div>
+          <div class="product-card">
+            <img src="/images/sinks/sink2.jpg" alt="Sink 2" />
+            <h3>Sink Model 2</h3>
+            <p>Granite composite, scratch-resistant.</p>
+          </div>
+          <div class="product-card">
+            <img src="/images/sinks/sink3.jpg" alt="Sink 3" />
+            <h3>Sink Model 3</h3>
+            <p>Dual-basin for busy kitchens.</p>
+          </div>
+        </div>
+        <button class="glider-prev">«</button>
+        <button class="glider-next">»</button>
+        <div class="dots"></div>
+      </div>
+    </section>
+
+    <!-- Category 3: Showers -->
+    <section class="category-section" id="showers">
+      <h2>Shower Systems</h2>
+      <p>High-performance shower solutions for ultimate comfort.</p>
+      <div class="glider-contain">
+        <div class="glider">
+          <div class="product-card">
+            <img src="/images/showers/shower1.jpg" alt="Shower 1" />
+            <h3>Shower System 1</h3>
+            <p>Rainfall head, sleek finish.</p>
+          </div>
+          <div class="product-card">
+            <img src="/images/showers/shower2.jpg" alt="Shower 2" />
+            <h3>Shower System 2</h3>
+            <p>Multi-function wand, easy cleaning.</p>
+          </div>
+          <div class="product-card">
+            <img src="/images/showers/shower3.jpg" alt="Shower 3" />
+            <h3>Shower System 3</h3>
+            <p>Thermostatic control, spa experience.</p>
+          </div>
+        </div>
+        <button class="glider-prev">«</button>
+        <button class="glider-next">»</button>
+        <div class="dots"></div>
+      </div>
+    </section>
+
+    <!-- Category 4: Plumbing -->
+    <section class="category-section" id="plumbing">
+      <h2>Plumbing Supplies</h2>
+      <p>A comprehensive range of plumbing essentials for every application.</p>
+      <div class="glider-contain">
+        <div class="glider">
+          <div class="product-card">
+            <img src="/images/plumbing/plumb1.jpg" alt="Plumbing Supply 1" />
+            <h3>Plumbing Supply 1</h3>
+            <p>High-grade PVC piping.</p>
+          </div>
+          <div class="product-card">
+            <img src="/images/plumbing/plumb2.jpg" alt="Plumbing Supply 2" />
+            <h3>Plumbing Supply 2</h3>
+            <p>Fittings, various sizes.</p>
+          </div>
+          <div class="product-card">
+            <img src="/images/plumbing/plumb3.jpg" alt="Plumbing Supply 3" />
+            <h3>Plumbing Supply 3</h3>
+            <p>Leak-proof sealants & more.</p>
+          </div>
+        </div>
+        <button class="glider-prev">«</button>
+        <button class="glider-next">»</button>
+        <div class="dots"></div>
+      </div>
+    </section>
+
+    <!-- Category 5: Commercial -->
+    <section class="category-section" id="commercial">
+      <h2>Commercial Equipment</h2>
+      <p>Durable solutions tailored to public and high-traffic environments.</p>
+      <div class="glider-contain">
+        <div class="glider">
+          <div class="product-card">
+            <img src="/images/commercial/comm1.jpg" alt="Commercial 1" />
+            <h3>Commercial Equip 1</h3>
+            <p>Heavy-duty stainless fixtures.</p>
+          </div>
+          <div class="product-card">
+            <img src="/images/commercial/comm2.jpg" alt="Commercial 2" />
+            <h3>Commercial Equip 2</h3>
+            <p>Anti-vandal faucets & hardware.</p>
+          </div>
+          <div class="product-card">
+            <img src="/images/commercial/comm3.jpg" alt="Commercial 3" />
+            <h3>Commercial Equip 3</h3>
+            <p>Bulk supply, cost-effective solutions.</p>
+          </div>
+        </div>
+        <button class="glider-prev">«</button>
+        <button class="glider-next">»</button>
+        <div class="dots"></div>
+      </div>
+    </section>
+
+    <!-- CTA to contact -->
+    <div class="products-cta">
+      <p>Looking for more information or a custom quote?</p>
+      <a href="/contact">Contact Us</a>
+    </div>
+
+  </div>
+</MainLayout>

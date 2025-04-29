@@ -1,0 +1,36 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Basic SEO -->
+    <title>Wardan Trading | Quality Sanitary & Building Solutions</title>
+    <meta name="description" content="Discover premium sanitary equipment and building materials from Wardan Trading. Trusted solutions for both residential and commercial needs." />
+    <meta name="keywords" content="Wardan Trading, sanitary equipment, building materials, faucets, sinks, plumbing, commercial solutions" />
+
+    <!-- Glider.js Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" />
+  </head>
+
+  <body>
+    <Header />
+      <main>
+        <slot />
+      </main>
+    <Footer />
+
+    <!-- WhatsApp Button -->
+    <WhatsAppButton />
+
+    <!-- Glider.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+  </body>
+</html>

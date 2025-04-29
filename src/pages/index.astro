@@ -1,11 +1,249 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout>
+  <!-- Hero: Split layout with left text, right image -->
+  <section class="hero-split container" data-aos="fade-up">
+    <div class="hero-text">
+      <h1>Building Excellence for Over 30 Years</h1>
+      <p>
+        Trusted materials, guided support, and reliable service. Wardan Trading
+        is your partner in every project.
+      </p>
+      <div class="hero-buttons">
+        <a href="/pyRAG" class="cta-btn hero-cta">Chat with our AI</a>
+        <a href="/contact" class="cta-btn secondary-cta"
+          >Free Expert Consultation</a
+        >
+      </div>
+    </div>
+    <div class="hero-image">
+      <!-- Example image: adjust path as needed -->
+      <div
+        style="
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 1rem;
+        padding: 2rem 0;
+      "
+      >
+        <!-- Background blur shape -->
+        <div
+          style="
+          position: absolute;
+          width: 450px;
+          height: 300px;
+          background: radial-gradient(circle at center, #f0f4f8 0%, transparent 70%);
+          z-index: 0;
+          border-radius: 50%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        "
+        >
+        </div>
+
+        <!-- Images with staggered sizes and margins -->
+        <img
+          src="/images/hero/hero1.svg"
+          alt="Quality building materials"
+          style="width: 160px; margin-bottom: 20px; position: relative; z-index: 1; transition: transform 0.3s ease;"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+          onmouseover="this.style.transform='scale(1.05)';"
+          onmouseout="this.style.transform='scale(1)';"
+        />
+        <img
+          src="/images/hero/hero2.svg"
+          alt="Quality building materials"
+          style="width: 190px; position: relative; z-index: 1; transition: transform 0.3s ease;"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+          onmouseover="this.style.transform='scale(1.05)';"
+          onmouseout="this.style.transform='scale(1)';"
+        />
+        <img
+          src="/images/hero/hero3.svg"
+          alt="Quality building materials"
+          style="width: 150px; margin-bottom: 30px; position: relative; z-index: 1; transition: transform 0.3s ease;"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+          onmouseover="this.style.transform='scale(1.05)';"
+          onmouseout="this.style.transform='scale(1)';"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <!-- <section class="intro container" data-aos="fade-up" data-aos-delay="100">
+    <h2>Why Wardan Trading?</h2>
+    <p>
+      From ceramic tiles and toilet accessories to pipes and heating systems,
+      our curated offerings ensure you get only the best. Backed by 30+ years of
+      trust, we go beyond just selling—we provide professional guidance at every
+      turn.
+    </p>
+  </section> -->
+
+  <!-- Problem → Solution with Icons -->
+  <section
+    class="problem-solution container"
+    data-aos="fade-up"
+    data-aos-delay="200"
+  >
+  <h1>Why Wardan Trading?</h1>
+  <p>
+    From ceramic tiles and toilet accessories to pipes and heating systems,
+    our curated offerings ensure you get only the best. Backed by 30+ years of
+    trust, we go beyond just selling—we provide professional guidance at every
+    turn.
+  </p>
+    <!-- <h2>Your Challenges, Our Solutions</h2>
+    <p>Fed up with subpar materials, leaks, and cracks? Let's fix that.</p> -->
+    <div class="solution-cards">
+      <div class="solution-card">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          width="48"
+          height="48"
+          ><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-224 0c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-224 0c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32l288 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-288 0c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+          ></path></svg
+        >
+        <h3>Curated Selection</h3>
+        <p>Proven, field-tested products—so you never have to guess.</p>
+      </div>
+      <div class="solution-card">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          width="48"
+          height="48"
+          ><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"
+          ></path></svg
+        >
+        <h3>Expert Guidance</h3>
+        <p>Decades of insight to help you avoid costly mistakes.</p>
+      </div>
+      <div class="solution-card">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 640 512"
+          width="48"
+          height="48"
+          ><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            d="M112 0C85.5 0 64 21.5 64 48l0 48L16 96c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 208 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 160l-16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l16 0 176 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 224l-48 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 144 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 288l0 128c0 53 43 96 96 96s96-43 96-96l128 0c0 53 43 96 96 96s96-43 96-96l32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64 0-32 0-18.7c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7L416 96l0-48c0-26.5-21.5-48-48-48L112 0zM544 237.3l0 18.7-128 0 0-96 50.7 0L544 237.3zM160 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm272 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z"
+          ></path></svg
+        >
+        <h3>Timely Delivery</h3>
+        <p>Reliable shipping that keeps your project moving on schedule.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section with background -->
+  <section class="testimonial-bg" data-aos="fade-up" data-aos-delay="300">
+    <div class="testimonial-content container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial-list">
+        <blockquote>
+          <p>
+            “Wardan Trading helped me avoid huge mistakes on a major project.
+            Couldn’t recommend them more!”
+          </p>
+          <cite>– Ahmad D., Contractor</cite>
+        </blockquote>
+        <blockquote>
+          <p>“Their tile selection and service were spot-on. Great team!”</p>
+          <cite>– Mira S., Architect</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Benefits (Icon Cards) -->
+  <section
+    class="benefits-section container"
+    data-aos="fade-up"
+    data-aos-delay="400"
+  >
+    <h2>Our Promise</h2>
+    <div class="benefits-grid">
+      <article class="benefit-card">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 640 512"
+          width="48"
+          height="48"
+          ><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            fill="#74C0FC"
+            d="M323.4 85.2l-96.8 78.4c-16.1 13-19.2 36.4-7 53.1c12.9 17.8 38 21.3 55.3 7.8l99.3-77.2c7-5.4 17-4.2 22.5 2.8s4.2 17-2.8 22.5l-20.9 16.2L512 316.8 512 128l-.7 0-3.9-2.5L434.8 79c-15.3-9.8-33.2-15-51.4-15c-21.8 0-43 7.5-60 21.2zm22.8 124.4l-51.7 40.2C263 274.4 217.3 268 193.7 235.6c-22.2-30.5-16.6-73.1 12.7-96.8l83.2-67.3c-11.6-4.9-24.1-7.4-36.8-7.4C234 64 215.7 69.6 200 80l-72 48 0 224 28.2 0 91.4 83.4c19.6 17.9 49.9 16.5 67.8-3.1c5.5-6.1 9.2-13.2 11.1-20.6l17 15.6c19.5 17.9 49.9 16.6 67.8-2.9c4.5-4.9 7.8-10.6 9.9-16.5c19.4 13 45.8 10.3 62.1-7.5c17.9-19.5 16.6-49.9-2.9-67.8l-134.2-123zM16 128c-8.8 0-16 7.2-16 16L0 352c0 17.7 14.3 32 32 32l32 0c17.7 0 32-14.3 32-32l0-224-80 0zM48 320a16 16 0 1 1 0 32 16 16 0 1 1 0-32zM544 128l0 224c0 17.7 14.3 32 32 32l32 0c17.7 0 32-14.3 32-32l0-208c0-8.8-7.2-16-16-16l-80 0zm32 208a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z"
+          ></path></svg
+        >
+        <h3>Unrivaled Expertise</h3>
+        <p>30+ years in the industry, bringing knowledge you can count on.</p>
+      </article>
+      <article class="benefit-card">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 576 512"
+          width="48"
+          height="48"
+          ><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            fill="#FFD43B"
+            d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+          ></path></svg
+        >
+        <h3>Top-Quality Products</h3>
+        <p>From tiles to pipes, everything is tested to ensure reliability.</p>
+      </article>
+      <article class="benefit-card">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          width="48"
+          height="48"
+          ><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            fill="#63E6BE"
+            d="M256 48C141.1 48 48 141.1 48 256l0 40c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-40C0 114.6 114.6 0 256 0S512 114.6 512 256l0 144.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24l-32 0c-26.5 0-48-21.5-48-48s21.5-48 48-48l32 0c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40L464 256c0-114.9-93.1-208-208-208zM144 208l16 0c17.7 0 32 14.3 32 32l0 112c0 17.7-14.3 32-32 32l-16 0c-35.3 0-64-28.7-64-64l0-48c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64l0 48c0 35.3-28.7 64-64 64l-16 0c-17.7 0-32-14.3-32-32l0-112c0-17.7 14.3-32 32-32l16 0z"
+          ></path></svg
+        >
+        <h3>Customer-Centric Service</h3>
+        <p>We guide, advise, and ensure satisfaction at every turn.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Floating CTA Button -->
+  <a href="/contact" class="floating-quote-btn" title="Request a Quote">📩</a>
+
+  <!-- Final CTA -->
+  <section class="cta-final">
+    <div class="cta-inner">
+      <h2>Ready to Build with Excellence?</h2>
+      <p>
+        Let us help you find the perfect solutions for your project. Get started
+        today!
+      </p>
+      <a href="/contact" class="cta-btn">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- AOS.js for scroll animations -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script is:inline>
+    AOS.init({ once: true });
+  </script>
+</MainLayout>

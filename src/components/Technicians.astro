@@ -1,0 +1,90 @@
+---
+const technicians = [
+  {
+    id: 'tech-1',
+    name: 'John Doe',
+    rating: 5,
+    description: 'Expert in sanitary installations, 15+ yrs of experience.',
+    contact: '+96170345xxx',
+    image: '/images/technicians/john.jpg',
+  },
+  {
+    id: 'tech-2',
+    name: 'Jane Smith',
+    rating: 4,
+    description: 'Maintenance & repair specialist with a focus on speed & precision.',
+    contact: '+96170123xxx',
+    image: '/images/technicians/jane.jpg',
+  },
+  {
+    id: 'tech-2',
+    name: 'Jane Smith',
+    rating: 4,
+    description: 'Maintenance & repair specialist with a focus on speed & precision.',
+    contact: '+96170123xxx',
+    image: '/images/technicians/jane.jpg',
+  },
+  {
+    id: 'tech-2',
+    name: 'Jane Smith',
+    rating: 4,
+    description: 'Maintenance & repair specialist with a focus on speed & precision.',
+    contact: '+96170123xxx',
+    image: '/images/technicians/jane.jpg',
+  },
+  // ...more technicians
+];
+
+function renderStars(rating) {
+  const full = '★'.repeat(rating);
+  const empty = '☆'.repeat(5 - rating);
+  return full + empty;
+}
+---
+
+<section class="technicians-fade-section">
+  <h2>Our Trusted Technicians</h2>
+  <p>Hover or tap a card to see their details and contact info.</p>
+
+  <div class="fade-grid">
+    {technicians.map(tech => (
+      <div class="fade-card" key={tech.id}>
+        {tech.image ? (
+          <img src={tech.image} alt={tech.name} class="tech-image" />
+        ) : (
+          <div class="tech-placeholder">No Photo</div>
+        )}
+        
+        {/* Fade/scale overlay */}
+        <div class="fade-overlay">
+          <h3>{tech.name}</h3>
+          <div class="rating">{renderStars(tech.rating)}</div>
+          <p class="tech-desc">{tech.description}</p>
+          <button class="contact-btn" data-contact={tech.contact}>
+            Show Contact
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script is:inline>
+document.querySelectorAll('.contact-btn').forEach(btn => {
+  btn.addEventListener('click', function () {
+    const contactNumber = this.getAttribute('data-contact');
+    const currentlyShown = this.getAttribute('data-shown') === 'true';
+
+    if (!currentlyShown) {
+      // FIRST CLICK:
+      // Change button text to reveal the number
+      this.textContent = 'Call: ' + contactNumber;
+      this.setAttribute('data-shown', 'true');
+    } else {
+      // SECOND CLICK:
+      // Actually dial the number
+      window.location.href = 'tel:' + contactNumber;
+    }
+  });
+});
+</script>

@@ -1,0 +1,56 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
+---
+
+<MainLayout>
+  <!-- Contact Hero -->
+  <section class="contact-hero">
+    <div class="hero-content container">
+      <h1>Need Assistance?</h1>
+      <p>
+        We’re here to help answer any questions, provide quotations, or guide
+        you through our products.
+      </p>
+    </div>
+  </section>
+
+  <!-- Two-Column Section -->
+  <section class="contact-grid container">
+    <!-- Left Column: Info -->
+    <div class="card contact-info">
+      <h2>Get in Touch</h2>
+      <p>
+        Whether you need advice on product selection or have questions about our
+        services, our dedicated team is here to assist you.
+      </p>
+      <ul>
+        <li>
+          <strong>Address:</strong> Saint Elichaa Street, Bsharri, Lebanon
+        </li>
+        <li><strong>Phone:</strong> +961 3 12 34 56</li>
+        <li><strong>Email:</strong> info@wardantrading.com</li>
+      </ul>
+      <p><em>Mon–Fri: 8am–6pm & Sat: 8am–4pm</em></p>
+
+      <!-- Google Maps Embed -->
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3298.2897503131258!2d36.00048797595948!3d34.241149407731506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1522051da78427bf%3A0xb3f9bfbd478c023b!2sWardan%20Trading!5e0!3m2!1sen!2sca!4v1745941773201!5m2!1sen!2sca"
+          width="600"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <!-- Right Column: Form -->
+    <div class="card contact-form-container">
+      <h2>Send a Message</h2>
+      <p>Please fill out the form below. We’ll respond as soon as possible.</p>
+      <ContactForm />
+    </div>
+  </section>
+</MainLayout>

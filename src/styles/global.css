@@ -1,0 +1,1063 @@
+/* === TYPOGRAPHY === */
+body {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  color: #222;
+  line-height: 1.6;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* === GRID & CONTAINER === */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 40px;
+}
+
+/* === HEADER AND NAV === */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: #0055a5;
+}
+
+/* === FOOTER === */
+footer {
+  padding: 40px;
+  background-color: #fafafa;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  border-top: 1px solid #eee;
+}
+
+/* === HERO SECTION (Modern Full-Bleed with Animation) === */
+.hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  text-align: center;
+  background-color: #fafafa;
+  border-bottom: 2px solid #0055a5;
+}
+.hero .hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/images/hero-bg.jpg') center/cover no-repeat;
+  filter: brightness(0.7);
+  animation: zoom 20s infinite alternate;
+}
+@keyframes zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+.hero .hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,85,165,0.6), rgba(0,61,120,0.6));
+}
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.05em;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.secondary-cta {
+  background-color: #fff;
+  color: #0055a5;
+  border: 2px solid #0055a5;
+}
+.secondary-cta:hover {
+  background-color: #0055a5;
+  color: #fff;
+}
+.cta-btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #0055a5;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+}
+.cta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.cta-final {
+  width: 100%;                /* Full browser width */
+  background-color: #eef5ff;  /* Light blue background */
+  padding: 60px 0;            /* Vertical spacing */
+  text-align: center;         /* Center text within .cta-inner */
+}
+
+/* This is your “inner container” that keeps text from spanning too wide */
+.cta-final .cta-inner {
+  max-width: 1100px;          /* Or your preferred container width */
+  margin: 0 auto;             /* Centers the content horizontally */
+  padding: 0 20px;            /* Adds a little horizontal padding for smaller screens */
+}
+
+/* Optional: Tweak heading & paragraph if desired */
+.cta-final h2 {
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 1rem;
+}
+.cta-final p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === HERO SPLIT LAYOUT === */
+.hero-split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 60px 0;
+  gap: 2rem;
+}
+.hero-split .hero-text {
+  flex: 1 1 400px;
+}
+.hero-split .hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #0055a5;
+}
+.hero-split .hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+.hero-split .hero-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+.hero-split .hero-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* === INTRO SECTION === */
+.intro {
+  text-align: center;
+  padding: 80px 0;
+}
+.intro h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+}
+.intro p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* === PROBLEM-SOLUTION SECTION === */
+.problem-solution {
+  text-align: center;
+  padding: 80px 0;
+}
+.solution-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.solution-cards div {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.solution-cards div:hover {
+  transform: translateY(-5px);
+}
+
+/* === TESTIMONIALS BACKGROUND SECTION === */
+.testimonial-bg {
+  background: url('/images/testimonial-bg.jpg') center/cover no-repeat;
+  padding: 80px 0;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+.testimonial-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.4);
+}
+.testimonial-content {
+  position: relative;
+  z-index: 1;
+}
+.testimonial-content h2 {
+  color: #fff;
+}
+.testimonial-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.testimonial-list blockquote {
+  background-color: rgba(255,255,255,0.1);
+  border-left: 4px solid #fff;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-style: italic;
+}
+.testimonial-list p {
+  color: #fff;
+}
+.testimonial-list cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* === GRID SECTION (Benefits) === */
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 60px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.grid-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+.grid-item p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* === HIGHLIGHTS / BENEFITS (Modern Cards) === */
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .highlights {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.benefit-card {
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 2rem;
+  flex: 1 1 250px;
+  max-width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+.benefit-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* === BENEFITS SECTION === */
+.benefits-section {
+  padding: 60px 0;
+  text-align: center;
+}
+.benefits-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.benefits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.benefits-grid .benefit-card {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 280px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.benefits-grid .benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.benefits-grid .benefit-card img {
+  width: 50px;
+  margin-bottom: 1rem;
+}
+
+/* === FINAL CTA SECTION === */
+.cta-final {
+  padding: 60px 0;
+  text-align: center;
+  background: #eef5ff;
+  margin: 4rem 0;
+  border-radius: 12px;
+}
+.cta-final .cta-inner {
+  max-width: 600px;
+  margin: auto;
+}
+.cta-final h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.cta-final p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* === FLOATING CTA BUTTON === */
+.floating-quote-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background-color: #0055a5;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+.floating-quote-btn:hover {
+  background-color: #003d78;
+}
+
+.technicians-section {
+  padding: 80px 0;
+  text-align: center;
+}
+.technicians-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.technicians-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+.technicians-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.technician-card {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 250px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+.technician-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.technician-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+.technician-placeholder {
+  width: 100%;
+  height: 150px;
+  border-radius: 12px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: bold;
+}
+.rating {
+  font-size: 1.2rem;
+  color: #f5a623;
+  margin-bottom: 1rem;
+}
+.contact-btn {
+  display: inline-block;
+  background-color: #0055a5;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.contact-btn:hover {
+  background-color: #003d78;
+}
+
+.about-hero {
+  padding: 60px 0;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-hero .hero-text {
+  flex: 1 1 400px;
+}
+
+.about-hero .hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #0055a5;
+  letter-spacing: -0.03em;
+}
+
+.about-hero .hero-subtitle {
+  font-size: 1.3rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.about-hero .hero-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.about-hero .hero-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.section.container {
+  padding: 40px 0;
+}
+
+.section.container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.section.container p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.highlight-item {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1 1 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.highlight-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.highlight-item h3 {
+  font-size: 1.3rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+/****************************************/
+/* Contact Hero Section                */
+/****************************************/
+.contact-hero {
+  background-color: #eef5ff; /* brand-consistent background */
+  padding: 60px 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-hero .hero-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+.contact-hero h1 {
+  font-size: 2.5rem;
+  color: #0055a5;
+  margin-bottom: 1rem;
+}
+
+.contact-hero p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 0;
+}
+
+/****************************************/
+/* Contact Grid Layout                 */
+/****************************************/
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/****************************************/
+/* Card Styling for Info & Form        */
+/****************************************/
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 2rem;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  color: #0055a5;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  margin-bottom: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/****************************************/
+/* Contact Info (Left Column)          */
+/****************************************/
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  line-height: 1.8;
+}
+.contact-info li strong {
+  color: #222;
+}
+
+/****************************************/
+/* Contact Form (Right Column)         */
+/****************************************/
+.contact-form-container {
+  /* We keep the bigger inputs for readability */
+}
+
+.contact-form-container input[type="text"],
+.contact-form-container input[type="email"],
+.contact-form-container textarea {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.contact-form-container textarea {
+  height: 325px;
+  resize: vertical;
+}
+
+.contact-form-container button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #0055a5;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form-container button:hover {
+  background-color: #003d78;
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;          /* Circle's overall width */
+  height: 60px;         /* Circle's overall height */
+  background-color: #25d366; /* WhatsApp green */
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;        /* Center the icon inside */
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+  z-index: 9999;
+}
+
+.whatsapp-button img {
+  width: 30px;          /* Icon's width */
+  height: 30px;         /* Icon's height */
+  object-fit: contain;  /* Keep aspect ratio if it's not square */
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-button {
+    bottom: 80px;  /* raise if overlapping a bottom nav on mobile */
+  }
+}
+
+/*******************************************
+ * 1. Grid & Card Container 
+ *******************************************/
+ .overlay-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.overlay-card {
+  position: relative;
+  width: 220px;
+  height: 280px;
+  border-radius: 8px;
+  overflow: hidden;     /* ensure overlay is clipped to the card */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+.overlay-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/*******************************************
+ * 2. Technician Image/Placeholder 
+ *******************************************/
+.tech-image, .tech-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.tech-placeholder {
+  background-color: #ccc;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*******************************************
+ * 3. The Overlay (Centered Content) 
+ *******************************************/
+.overlay-info {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  text-align: center;
+
+  /* Start off fully below the card via translate, invisible */
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+/* On hover, slide overlay up to cover entire card, center text */
+.overlay-card:hover .overlay-info,
+.overlay-card:focus-within .overlay-info {
+  transform: translateY(0%);
+  opacity: 1;
+}
+/***************************************
+  Technicians Overlay Section
+***************************************/
+.technicians-overlay-section {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 20px;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.technicians-overlay-section h2 {
+  font-size: 2rem;
+  color: #0055a5;
+  margin-bottom: 0.5rem;
+}
+
+.technicians-overlay-section p {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/***************************************
+  Grid Layout
+***************************************/
+.overlay-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/***************************************
+  Card & Photo
+***************************************/
+.overlay-card {
+  position: relative;
+  width: 220px;
+  height: 280px;
+  overflow: hidden; /* so overlay is masked within the card */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+}
+.overlay-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.tech-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.tech-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: #ccc;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/***************************************
+  Overlay Info
+***************************************/
+.overlay-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;            /* overlay covers full card */
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Start hidden / out of view */
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+/* On hover or focus, reveal overlay */
+.overlay-card:hover .overlay-info,
+.overlay-card:focus-within .overlay-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.overlay-info h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+.overlay-info .rating {
+  font-size: 1.1rem;
+  color: #f5a623; /* star color on overlay can remain */
+  margin-bottom: 0.5rem;
+}
+.overlay-info .tech-desc {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/***************************************
+  Contact Button
+***************************************/
+.contact-btn {
+  background-color: #0055a5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+.contact-btn:hover {
+  background-color: #003d78;
+}
+/*******************************************
+ * 4. Text & Button 
+ *******************************************/
+.overlay-info h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+.rating {
+  font-size: 1.1rem;
+  color: #f5a623;
+  margin-bottom: 0.5rem;
+}
+.tech-desc {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem; /* ensure text isn't flush to edges */
+}
+.contact-btn {
+  background-color: #0055a5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+.contact-btn:hover {
+  background-color: #003d78;
+}
+
+/************************************************
+  Technicians Fade Section Layout
+************************************************/
+.technicians-fade-section {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 20px;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.technicians-fade-section h2 {
+  font-size: 2rem;
+  color: #0055a5;
+  margin-bottom: 0.5rem;
+}
+.technicians-fade-section p {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/************************************************
+  Grid Layout
+************************************************/
+.fade-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/************************************************
+  Card & Photo
+************************************************/
+.fade-card {
+  position: relative;
+  width: 220px;
+  height: 280px;
+  border-radius: 8px;
+  overflow: hidden;     /* ensures overlay is clipped */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+.fade-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Photo or Placeholder fills the card */
+.tech-image,
+.tech-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.tech-placeholder {
+  background-color: #ccc;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/************************************************
+  Fade Overlay
+************************************************/
+.fade-overlay {
+  position: absolute;
+  top: 0; left: 0;  /* fill entire card */
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  text-align: center;
+
+  /* Start invisible & scaled down slightly */
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+/* On hover, fade & scale to normal. Always perfectly centered. */
+.fade-card:hover .fade-overlay,
+.fade-card:focus-within .fade-overlay {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/************************************************
+  Overlay Content
+************************************************/
+.fade-overlay h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+.rating {
+  font-size: 1.1rem;
+  color: #f5a623;
+  margin-bottom: 0.5rem;
+}
+.tech-desc {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+/************************************************
+  Contact Button
+************************************************/
+.contact-btn {
+  background-color: #0055a5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+.contact-btn:hover {
+  background-color: #003d78;
+}

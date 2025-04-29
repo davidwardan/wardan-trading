@@ -1,0 +1,201 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<style>
+  /* Minimal, Swiss-Inspired Layout */
+  .products-wrapper {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+    color: #111; /* Crisp text color */
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Header Section */
+  .products-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .products-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+    color: #0055a5; /* Brand color for headings */
+  }
+
+  .products-intro p {
+    font-size: 1rem;
+    color: #333;
+  }
+
+  /* Category Section Layout */
+  .category-section {
+    margin: 3rem 0;
+    text-align: center;
+  }
+
+  .category-section h2 {
+    font-size: 1.5rem;
+    color: #0055a5;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .category-section p {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Glider Container */
+  .glider-contain {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1000px; /* Align slides nicely */
+  }
+
+  /* Show partial slides for Swiss-like minimal continuity */
+  .glider {
+    /* slidesToShow is set inline with JS (2.3 or 2.5) */
+  }
+
+  /* Nav Arrows & Dots (Simple, understated) */
+  .glider-prev,
+  .glider-next {
+    background: #0055a5;
+    border: none;
+    color: #fff;
+    width: 36px; /* or 40px, as you prefer */
+    height: 36px;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    /* Center the arrow using flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem; /* Adjust to match arrow or icon size */
+  }
+
+  .glider-prev:hover,
+  .glider-next:hover {
+    transform: scale(1.1);
+  }
+
+  .dots {
+    margin-top: 0.75rem;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .dots button {
+    width: 8px;
+    height: 8px;
+    background: #ccc;
+    border-radius: 50%;
+    border: none;
+    transition:
+      background 0.2s,
+      transform 0.2s;
+  }
+
+  .dots button.glider-dot.active {
+    background: #0055a5;
+    transform: scale(1.3);
+  }
+
+  /* Product Card */
+  .product-card {
+    width: 220px; /* consistent width */
+    background: #fff;
+    margin: 0 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s;
+    text-align: center;
+    overflow: hidden; /* Crop overflowing images */
+  }
+
+  .product-card:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .product-card h3 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1rem;
+    color: #111;
+  }
+
+  .product-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0 1rem 1rem;
+  }
+
+  /* CTA at bottom */
+  .products-cta {
+    text-align: center;
+    margin: 4rem 0 2rem;
+  }
+
+  .products-cta a {
+    display: inline-block;
+    background-color: #0055a5;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  .products-cta a:hover {
+    background-color: #003d78;
+  }
+</style>
+
+<!-- Glider.js Setup -->
+<script is:inline>
+  window.addEventListener("load", function () {
+    setTimeout(() => {
+      document.querySelectorAll(".glider").forEach((gliderEl) => {
+        new Glider(gliderEl, {
+          slidesToShow: 2.3, // partial next slide for smooth visual
+          slidesToScroll: 1,
+          draggable: true,
+          rewind: true,
+          dots: gliderEl.parentElement.querySelector(".dots"),
+          arrows: {
+            prev: gliderEl.parentElement.querySelector(".glider-prev"),
+            next: gliderEl.parentElement.querySelector(".glider-next"),
+          },
+          duration: 0.5, // quick transitions
+        });
+      });
+    }, 100);
+  });
+</script>
+
+<MainLayout>
+  <div class="products-wrapper">
+    <!-- Simple Intro -->
+    <section class="products-intro">
+      <h1>Our AI will be available soon!</h1>
+      <p>
+        We are building an AI-powered platform to help you find the best
+        products for your projects. Our goal is to make your experience as
+        seamless and efficient as possible. Stay tuned!
+      </p>
+    </section>
+  </div>
+</MainLayout>

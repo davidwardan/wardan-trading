@@ -1,0 +1,9 @@
+---
+const phone = "+9613323530"; // Replace with your actual phone number
+const message = encodeURIComponent("Hello, I'm interested in your sanitary equipment.");
+const link = `https://wa.me/${phone.replace("+", "")}?text=${message}`;
+---
+<a href={link} target="_blank" rel="noopener noreferrer" class="whatsapp-button">
+  <!-- You can use an icon image or a simple SVG here -->
+  <img src="/images/whatsapp-icon.svg" alt="Chat on WhatsApp" />
+</a>
